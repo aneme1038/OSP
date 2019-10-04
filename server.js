@@ -50,7 +50,7 @@ app.get('/app', (req, res) => {
   if(req.session.currentUser){
     res.render('app/index.ejs');
   } else {
-    res.redirect('/sessions/new');
+    res.redirect('/sessions/new.ejs');
   }
 });
 //--------------------
@@ -77,5 +77,5 @@ mongoose.connection.once('open', () => {
 //LISTENERS
 //--------------------
 app.listen(PORT, () => {
-  console.log('Listening...');
+  console.log('Listening on ', PORT);
 })

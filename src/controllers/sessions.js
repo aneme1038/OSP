@@ -2,12 +2,16 @@
 //DEPENDANCIES
 //---------------
 const express = require('express');
-const router = express.Router();
+const sessions = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
+//get route for sessions
+sessions.get('/new', (req, res) => {
+  res.render('sessions/new.ejs');
+})
 //Close and Destroy User Session
-router.delete('/', (req, res) => {
+sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
     res.status(200).json({
       status: 200,
@@ -17,7 +21,7 @@ router.delete('/', (req, res) => {
 });
 
 //User Login
-router.post('/', (req, res) => {
+sessions.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (error, foundUser) => {
     if(foundUser === null) {
       res.status(404).json({
@@ -43,5 +47,5 @@ router.post('/', (req, res) => {
   });
 });
 
-//export router
-module.exports = router;
+//export sessions
+module.exports = sessions;

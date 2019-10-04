@@ -16,6 +16,13 @@
           <form action="/sessions?_method=DELETE" method="POST">
             <input class="btn" id="logOut" type="submit" value="Sign Out"/>
           </form>
+        <% } else { %>
+          <h1> Welcome to OSP. Please sign-in to continue... </h1>
+          <a href="./sessions/new"><button class="btn">Login</button></a>
+          <br />
+          <h3> Don't have an account with us? Let's fix that...</h3>
+          <a href="./users/new"><button class="btn">Register</button></a>
+          <br />
         <% } %>
       </div>
     </main>
