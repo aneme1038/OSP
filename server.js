@@ -39,15 +39,18 @@ const sessionsController = require('./src/controllers/sessions.js');
 app.use('/sessions', sessionsController);
 //Add additional controllers below...
 
-//Main Server Route for user login session
+//main index route
 app.get('/', (req, res) => {
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  })
+})
+//Main Server Route for user login session
+app.get('/app', (req, res) => {
   if(req.session.currentUser){
-    res.json(req.session.currentUser);
+    res.render('app/index.ejs');
   } else {
-    res.status(401).json({
-      status: 401,
-      message: "Not Logged In"
-    });
+    res.redirect('/sessions/new');
   }
 });
 //--------------------
