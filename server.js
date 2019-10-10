@@ -21,6 +21,7 @@ console.log(MONGODB_URI);
 //-------------------
 //MIDDLEWARE
 //-------------------
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('./app/public'));
 app.use(sessions({

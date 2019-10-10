@@ -23,20 +23,19 @@ sessions.delete('/', (req, res) => {
 //User Login
 sessions.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (error, foundUser) => {
-    if(foundUser === null) {
-      res.status(404).json({
-        status: 404,
-        message: 'User Not Found',
-        userData: foundUser
-      })
+    console.log(req.body);
+    //series of checks for username and password
+    if (error) {
+      console.log(error);
+      res.send('The Database encountered some error.')
+    } else if (!foundUser) {
+      //if the user found is considered "undefined" or "null"
+      res.send('<a href="/">Sorry, no such user was found</a>')
     } else {
       if (bcrypt.compareSync(req.body.password, foundUser.password)){
-        req.sessions.currentUser = foundUser;
-        res.status(201).json({
-          status:201,
-          message: 'User Session Created',
-          userData: foundUser
-        });
+        console.log(foundUser);
+        req.session.currentUser = foundUser;
+        res.redirect('/');
       } else {
         res.status(401).json({
           status: 401,
