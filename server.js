@@ -23,7 +23,7 @@ console.log(MONGODB_URI);
 //-------------------
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('./app/public'));
+app.use(express.static('./views'));
 app.use(sessions({
   secret: process.env.SECRET,
   resave: false,
