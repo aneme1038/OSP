@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Invision</title>
-    <link href="./css/landing.css" rel="stylesheet">
+    <% include ./partials/head.ejs %>
   </head>
   <body>
     <header>
+      <% include ./partials/header.ejs %>
     </header>
     <main>
-      <div class="loginArea">
-        <% if(currentUser) { %>
-          <h1>Welcome, <%=currentUser.username%>.</h1><br />
-          <a href="/app"><button class="btn">Enter 'The Base'</button></a><br />
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input class="btn" id="logOut" type="submit" value="Sign Out"/>
-          </form>
-        <% } else { %>
-          <h1> Welcome to 'The Base'. Please sign-in to continue... </h1>
-          <a href="./sessions/new"><button class="btn">Login</button></a>
-          <br />
-          <h3> Don't have an account with us? Let's fix that...</h3>
-          <a href="./users/new"><button class="btn">Register</button></a>
-          <br />
-        <% } %>
+      <div class="modalBox">
+        <div class="loginArea">
+          <% if(currentUser) { %>
+            <h1>Welcome, <%=currentUser.username%>.</h1><br />
+            <a href="/app"><button class="btn">Enter 'The Base'</button></a><br />
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input class="btn" id="logOut" type="submit" value="Sign Out"/>
+            </form>
+          <% } else { %>
+            <h1> Welcome to 'The Base'. Please sign-in to continue... </h1>
+            <a href="./sessions/new"><button class="btn">Login</button></a>
+            <br />
+            <h3> Don't have an account with us? Let's fix that...</h3>
+            <a href="./users/new"><button class="btn">Register</button></a>
+            <br />
+          <% } %>
+        </div>
+      </div>
+      <div class="mainContainer">
+        <% include ./partials/main.ejs %>
       </div>
     </main>
+    <footer>
+      <% include ./partials/footer.ejs %>
+    </footer>
   </body>
 </html>
