@@ -20,6 +20,14 @@ header {
   left: 0;
   position: fixed;
 }
+#login {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 0 15px;
+}
+#login:hover {
+  text-decoration: #61FFCF underline;
+}
 .modalBox {
   display: none;
 }
