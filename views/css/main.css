@@ -10,11 +10,14 @@ body {
 }
 header {
   display: flex;
+  justify-content: space-between;
   width: 100%;
+  padding: 15px 50px 15px 10px;
   height: 50px;
   background-color: black;
   color: whitesmoke;
   top: 0;
+  left: 0;
   position: fixed;
 }
 .modalBox {
@@ -25,41 +28,20 @@ header {
   font-size: 0.8em;
 }
 .menu1 {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  width: 150px;
+  display: flex;
 }
-.menu1, .subMenu1 {
+.menu1 > li {
   list-style: none;
+  margin: 0 20px;
 }
-.menu1 > li > a > img {
-  height: 30px;
-  width: 30px;
-}
-.menu1 > li > a, .subMenu1 > li > a {
-  color: black;
+.menu1 > li > a {
   text-decoration: none;
-  display: block;
-  padding: 5px 10px;
-  text-align: center;
-}
-.menu1 ul {
-  height: 0;
-  opacity: 0;
-  background-color: whitesmoke;
-  border-radius: 10%;
-  position: absolute;
-  transition: all .3s ease;
   font-family: 'Fira Sans', sans-serif;
-  display: block;
-  font-size: 1.25em;
+  color: whitesmoke;
 }
-
-.menu1 li:hover ul {
-  height: 200px;
-  opacity: 1;
-  transform: translateX(0);
+.menu1 > li > a:hover {
+  transition: all .20s ease;
+  text-decoration: #61FFCF underline;
 }
 .body {
   background-color: #002;
