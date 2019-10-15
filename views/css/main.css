@@ -24,9 +24,56 @@ header {
   color: whitesmoke;
   text-decoration: none;
   margin: 0 15px;
+  font-family: 'Fira Sans', sans-serif;
 }
 #login:hover {
   text-decoration: #61FFCF underline;
+}
+#startNow {
+  color: whitesmoke;
+  text-decoration: none;
+  border-radius:
+}
+#magnifying-glass {
+     font-size: 2.5em;
+     margin-top: 12px;
+     margin-right: 25px;
+     display: inline-block;
+     width: 0.4em;
+     box-sizing: content-box;
+     height: 0.4em;
+     border: 0.1em solid whitesmoke;
+     position: relative;
+     border-radius: 0.35em;
+   }
+   #magnifying-glass:before {
+     content: "";
+     display: inline-block;
+     position: absolute;
+     right: -0.25em;
+     bottom: -0.1em;
+     border-width: 0;
+     background: whitesmoke;
+     width: 0.35em;
+     height: 0.08em;
+     transform: rotate(45deg);
+   }
+#rNavStart{
+  display: flex;
+}
+.halfCircleLeft {
+  height:90px;
+  width:45px;
+  border-radius: 90px 0 0 90px;
+  background: black;
+}
+.halfCircleRight {
+  margin-top: 10px;
+  height:25px;
+  width:15px;
+  border-radius: 0 90px 90px 0;
+  border: 2px solid whitesmoke;
+  background: black;
 }
 .modalBox {
   display: none;
