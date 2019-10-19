@@ -10,6 +10,10 @@ const app = express();
 const sessions = require('express-session');
 //CORS
 const cors = require('cors');
+//HTTP
+const http = require('http').Server(app);
+//Socket.io
+const io = require('socket.io')(http);
 //dotenv
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
