@@ -3,13 +3,13 @@ const messages = express.Router();
 const Message = require('../models/messages.js');
 
 //get route
-messages.get('/messages', (req, res) => {
+messages.get('/', (req, res) => {
   Message.find({}, (error, messages) => {
     res.send(messages);
   })
 })
 //post route
-messages.post('/messages', (req, res) => {
+messages.post('/', (req, res) => {
   var message = new Message(req.body);
   message.save((error) => {
     if(error){
@@ -19,3 +19,5 @@ messages.post('/messages', (req, res) => {
     }
   })
 })
+
+module.exports = messages;

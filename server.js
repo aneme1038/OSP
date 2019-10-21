@@ -43,6 +43,10 @@ app.use('/users', userController);
 const sessionsController = require('./src/controllers/sessions.js');
 app.use('/sessions', sessionsController);
 //Add additional controllers below...
+const messagesController = require('./src/controllers/messages.js');
+app.use('/messages', messagesController);
+const projectsController = require('./src/controllers/projects.js');
+app.use('/projects', projectsController);
 
 //main index route
 app.get('/', (req, res) => {
