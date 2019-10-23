@@ -14,6 +14,8 @@ const cors = require('cors');
 const http = require('http').Server(app);
 //Socket.io
 const io = require('socket.io')(http);
+//method override
+const methodOverride = require('method-override')
 //dotenv
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
