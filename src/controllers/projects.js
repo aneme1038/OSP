@@ -26,4 +26,10 @@ projects.get('/:id', (req, res) => {
   })
 })
 
+projects.delete('/:id', (req, res) => {
+  Project.findByIdAndDelete(req.params.id, (error, foundProject) => {
+    res.redirect('/');
+  })
+})
+
 module.exports = projects;
