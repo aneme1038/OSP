@@ -19,5 +19,14 @@ messages.post('/', (req, res) => {
     }
   })
 })
-
+messages.get('/:id', (req, res) => {
+  Message.findById(req.params.id, (error, foundMessage) => {
+    res.json(foundMessage)
+  })
+})
+messages.delete('/:id', (req, res) => {
+  Message.findByIdAndDelete(req.params.id, (error, foundMessage) => {
+    res.redirect('/');
+  })
+})
 module.exports = messages;
