@@ -8,6 +8,7 @@
       <% include ./partials/header.ejs %>
     </header>
     <main>
+      <!--This Modal box was put in as a way of showing up if the user wasn't logged in. However, there is also, in the mockup, a sign in button in the header. The modal box may be unnecessary but could be changed to something else -->
       <div class="modalBox">
         <div class="loginArea">
           <% if(currentUser) { %>
@@ -26,6 +27,7 @@
           <% } %>
         </div>
       </div>
+      <!--Main Container houses all homepage content for users -->
       <div class="mainContainer">
         <% include ./partials/main.ejs %>
       </div>

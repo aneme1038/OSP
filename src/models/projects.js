@@ -6,7 +6,8 @@ const projectsSchema = Schema({
   name: String,
   dateCreated: String,
   category: String,
-  subcategory: String
+  subcategory: String,
+  description: String
 })
 
 const Project = mongoose.model('Project', projectsSchema);

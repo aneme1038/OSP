@@ -19,6 +19,16 @@
     <a href="#"><h4 id="mostRec">Most Recent</h4></a>
     <a href="#"><h4 id="featured">Featured</h4></a>
   </div>
-  <div class="card">
-  </div>
+  <% for (let i = 0; i < projects.length; i++) { %>
+    <div class="card">
+      <div class="cardImg">
+        <img src="#" alt="Project #"/>
+      </div>
+      <div>
+        <h3 class="projectTitle"><%=projects[i].name%></h3>
+      </div>
+      <div>
+        <p class="projectDescription"><%=projects[i].description%></p>
+      </div>
+    </div>
 </div>
