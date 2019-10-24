@@ -20,6 +20,10 @@ header {
   left: 0;
   position: fixed;
 }
+.nav {
+  display: flex;
+  margin-left: 100px;
+}
 #login {
   color: whitesmoke;
   text-decoration: none;
@@ -176,7 +180,5 @@ footer {
 .copyright {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-left: 50px;
-  font-size: 2em;
+  font-size: 1em;
 }
