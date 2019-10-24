@@ -19,8 +19,8 @@ const methodOverride = require('method-override')
 //dotenv
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
-//Mongoose
-const db = mongoose.connection;
+console.log(PORT);
+//Mongoosesdfconnection;
 const MONGODB_URI = process.env.MONGODB_URI;
 console.log(MONGODB_URI);
 
