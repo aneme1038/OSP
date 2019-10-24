@@ -45,7 +45,7 @@ app.use(cors());
 const userController = require('./src/controllers/users.js');
 app.use('/users', userController);
 const sessionsController = require('./src/controllers/sessions.js');
-app.use('/sessions', sessionsController);
+app.use('/session', sessionsController);
 //Add additional controllers below...
 const messagesController = require('./src/controllers/messages.js');
 app.use('/messages', messagesController);
