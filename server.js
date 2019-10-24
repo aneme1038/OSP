@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const app = express();
 //Sessions
 const sessions = require('express-session');
+//mongoose connection variable 
+const db = mongoose.connection;
 //CORS
 const cors = require('cors');
 //HTTP
