@@ -5,7 +5,7 @@ const Project = require('../models/projects.js');
 //get Route
 projects.get('/', (req, res) => {
   Project.find({}, (error, projects) => {
-    res.send(projects);
+    res.render('./navigation/howItWorks.ejs');
   })
 })
 //post route

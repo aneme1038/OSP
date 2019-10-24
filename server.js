@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 //Sessions
 const sessions = require('express-session');
-//mongoose connection variable 
+//mongoose connection variable
 const db = mongoose.connection;
 //CORS
 const cors = require('cors');
@@ -51,7 +51,8 @@ const messagesController = require('./src/controllers/messages.js');
 app.use('/messages', messagesController);
 const projectsController = require('./src/controllers/projects.js');
 app.use('/projects', projectsController);
-
+const pagesController = require('./src/controllers/pages.js');
+app.use('/directory', pagesController);
 //main index route
 app.get('/', (req, res) => {
   res.render('index.ejs', {
