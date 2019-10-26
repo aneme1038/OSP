@@ -14,5 +14,8 @@ pages.get('/discover', (req, res) => {
 pages.get('/about', (req, res) => {
   res.render('./navigation/about.ejs')
 })
+pages.get('/create', (req, res) => {
+  res.render('./navigation/createProject.ejs')
+})
 
 module.exports = pages;

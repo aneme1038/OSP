@@ -72,7 +72,7 @@ app.get('/app', (req, res) => {
 //--------------------
 //Connect to MongoDB Cloud Atlas
 //add mongodb uri once we have it
-mongoose.connect(MONGODB_URI, {useNewUrlPaser: true});
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 //Error / Success - Development Side
 db.on('error', (error) => {
   console.log(error.message + ' is MongoD not running?');

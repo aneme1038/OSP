@@ -10,7 +10,11 @@
 </div>
 <div class="nav2">
   <a href="#"><div id="magnifying-glass"></div></a>
+  <% if(currentUser) { %>
+  <a href="/session/logout" id="logout"><h3>Sign Out</h3></a>
+  <% } else { %>
   <a href="/session/login" id="login"><h3>Sign In</h3></a>
+  <% } %>
   <div id="rNavStart">
     <div class="halfCircleLeft"></div><a href="#" id="startNow"><h3>Start Now</h3></a><div class="halfCircleRight"></div>
   </div>
