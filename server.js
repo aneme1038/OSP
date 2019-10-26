@@ -8,13 +8,21 @@ const mongoose = require('mongoose');
 const app = express();
 //Sessions
 const sessions = require('express-session');
+//mongoose connection variable
+const db = mongoose.connection;
 //CORS
 const cors = require('cors');
+//HTTP
+const http = require('http').Server(app);
+//Socket.io
+const io = require('socket.io')(http);
+//method override
+const methodOverride = require('method-override')
 //dotenv
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
-//Mongoose
-const db = mongoose.connection;
+console.log(PORT);
+//Mongoosesdfconnection;
 const MONGODB_URI = process.env.MONGODB_URI;
 console.log(MONGODB_URI);
 
@@ -37,9 +45,14 @@ app.use(cors());
 const userController = require('./src/controllers/users.js');
 app.use('/users', userController);
 const sessionsController = require('./src/controllers/sessions.js');
-app.use('/sessions', sessionsController);
+app.use('/session', sessionsController);
 //Add additional controllers below...
-
+const messagesController = require('./src/controllers/messages.js');
+app.use('/messages', messagesController);
+const projectsController = require('./src/controllers/projects.js');
+app.use('/projects', projectsController);
+const pagesController = require('./src/controllers/pages.js');
+app.use('/directory', pagesController);
 //main index route
 app.get('/', (req, res) => {
   res.render('index.ejs', {

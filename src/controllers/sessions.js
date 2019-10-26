@@ -7,7 +7,7 @@ const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
 //get route for sessions
-sessions.get('/new', (req, res) => {
+sessions.get('/login', (req, res) => {
   res.render('sessions/new.ejs');
 })
 //Close and Destroy User Session

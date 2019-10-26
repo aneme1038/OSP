@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header.ejs %>
+    </header>
+    <main>
+      <h2>New Project</h2>
+      <form>
+        <label for="projectName">Project Name</label>
+          <input type="text" name="projectName" placeholder="Flying Cars"/>
+        <label for="projectIdea">What are you making?</label>
+          <input type="text" name="projectIdea" placeholder="A Flying Car"/>
+        <label for="projectProblem">What problem are you solving?</label>
+          <input type="text" name="projectProblem" placeholder="Traffice in Big Cities"/>
+        <label for="projectLocation">Location</label>
+          <input type="text" name="projectLocation" placeholder="New York"/>
+        <label for="websiteURL"></label>
+          <input type="url" name="websiteURL" placeholder="https://www.flyingcars.com/">
+        <label for="projectDetails">Tell the world more details</label>
+          <input type="text" name="projectDetails" placeholder="I make flying cars for a living"/>
+        <!--Setup button or link for displaying categories in a sort of dropdown style box--><label for="categories">Categories</label>
+          <div class="categories">
+            <input type="checkbox" value="Art and Culture"/>
+            <input type="checkbox" value="Business"/>
+            <input type="checkbox" value="Contacts"/>
+            <input type="checkbox" value="Creative"/>
+            <input type="checkbox" value="Education"/>
+            <input type="checkbox" value="Governance"/>
+            <input type="checkbox" value="Miscellaneous"/>
+            <input type="checkbox" value="Personal"/>
+            <input type="checkbox" value="Services"/>
+            <input type="checkbox" value="Networks"/>
+            <input type="checkbox" value="Workflows"/>
+            <input type="checkbox" value="Other"/>
+          </div>
+          <!--This is a tricky section. Can we do form within a form? Or submit an array of "tags" as part of the form? -->
+        <label for="tags">Tags</label>
+          <input type="text" name="tags" placeholder="New Tag"/>
+          <button>Add</button>
+        <div class="imgUploadCont">
+          <label for="projectImages"></label>
+          <!--Make a button or hyperlink? -->
+          <button><img src="#" alt="Upload Image Files"/></button>
+          <div class="uploadedImages">
+            <!--uploaded images should appear here... -->
+          </div>
+          <h1>Don't have a photo? <a href="#">Create one Here.</a></h1>
+          <input type="submit" value="Create Your Project"/>
+      </form>
+    </main>
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
+  </body>
+</html>
