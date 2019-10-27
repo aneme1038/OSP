@@ -1,193 +1,313 @@
-/* * {
+* {
   border: 1px solid gold;
-} */
+}
 
-/* GENERAL */
-body {
-  background:
-    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-  background-color: #131313;
-  background-size: 20px 20px;
-  color: whitesmoke;
-  font-family: 'Fira Sans', sans-serif;
+/* =====================
+| | Color Variables
+===================== */
+
+:root {
+  --color-green: #61FFCF;
+  --color-light: whitesmoke;
+  --color-dark: black;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 15px 50px 15px 10px;
-  height: 50px;
-  background-color: black;
-  color: whitesmoke;
-  top: 0;
-  left: 0;
-  position: fixed;
-}
-.nav {
-  display: flex;
-  margin-left: 100px;
-}
-#login {
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 0 15px;
-  font-family: 'Fira Sans', sans-serif;
-}
-#login:hover {
-  text-decoration: #61FFCF underline;
-}
-#startNow {
-  color: whitesmoke;
-  text-decoration: none;
-}
-#startNow:hover {
-  text-decoration: #61FFCF underline;
-}
-#magnifying-glass {
-  font-size: 2.5em;
-  margin-top: 12px;
-  margin-right: 25px;
-  display: inline-block;
-  width: 0.4em;
-  box-sizing: content-box;
-  height: 0.4em;
-  border: 0.1em solid whitesmoke;
-  position: relative;
-  border-radius: 0.35em;
-}
-#magnifying-glass:before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  right: -0.25em;
-  bottom: -0.1em;
-  border-width: 0;
-  background: whitesmoke;
-  width: 0.35em;
-  height: 0.08em;
-  transform: rotate(45deg);
-}
-#rNavStart{
-  display: flex;
-  margin-right: 25px;
-}
-.halfCircleLeft {
-  height:25px;
-  margin-top: 10px;
-  width:15px;
-  border-radius: 90px 0 0 90px;
-  border-left: 2px solid whitesmoke;
-  background: black;
-}
-.halfCircleRight {
-  margin-top: 10px;
-  height:25px;
-  width:15px;
-  border-radius: 0 90px 90px 0;
-  border-right: 2px solid whitesmoke;
-  background: black;
-}
-.modalBox {
-  display: none;
-}
-.nav2 {
-  display: flex;
-  font-size: 0.8em;
-}
-.menu1 {
-  display: flex;
-}
-.menu1 > li {
-  list-style: none;
-  margin: 0 20px;
-}
-.menu1 > li > a {
-  text-decoration: none;
-  font-family: 'Fira Sans', sans-serif;
-  color: whitesmoke;
-}
-.menu1 > li > a:hover {
-  transition: all .20s ease;
-  text-decoration: #61FFCF underline;
-}
-.body {
-  background-color: #002;
-  text-align: center;
-}
-.headSrContainer {
-  display: flex;
-  flex-direction: column;
-}
-.centralHeader {
-  font-size: 0.9em;
-}
-.subCentralHeader {
-  font-size: 0.7em;
-  color: #61FFCF;
-}
-.searchBar input {
-  width: 60%;
-  height: 20px;
-  border: none;
-}
-.menu ul a {
-  color: #E3D8A6;
-  display: block;
-  padding: 5px 10px;
-}
-.nav3 {
-  display: flex;
-  justify-content: center;
-}
-.nav3 a {
-  margin: 5px;
-  text-decoration: none;
-  color: whitesmoke;
-}
-.nav3 a:hover {
-  transition: all .20s ease;
-  text-decoration: #61FFCF underline;
-}
-footer {
-  background-color: black;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  left: 0;
-}
-.footerCol {
-  display: flex;
-}
-.col {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 15px;
-}
-.footerLinks {
-  text-align: left;
-}
-.colHead {
-  margin: 15px;
-}
-.list-item {
-  list-style: none;
-}
-.list-item > a {
-  text-decoration: none;
-  color: gray;
-}
-.footerLinks > ul {
-  padding: 15px;
-}
-.copyright {
-  display: flex;
-  justify-content: center;
-  font-size: 1em;
-}
+
+/* =====================
+| | Mobile Design
+===================== */
+
+  /* =====================
+  | | General
+  ===================== */
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+      linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+      linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+      linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+      linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+      linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+    color: var(--color-light);
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+  a, a:visited {
+    color: var(--color-light);
+    font-size: .8em;
+    text-decoration: none;
+  }
+    a:hover {
+      text-decoration: var(--color-green) underline;
+    }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+    li {
+      list-style: none;
+    }
+
+  /* =====================
+  | | Header
+  ===================== */
+
+  header {
+    width: 100%;
+    height: 90px;
+    background-color: var(--color-dark);
+    top: 0;
+    position: fixed;
+  }
+
+  .headContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--color-dark);
+  }
+
+  .logo {
+    align-self: center;
+  }
+
+  .nav {
+    align-self: center;
+  }
+    .navMenu {
+      display: flex;
+      text-transform: capitalize;
+      margin: 0;
+      padding: 0;
+    }
+    .navMenu li {
+      padding: 10px;
+    }
+
+  .loginMenu {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+  }
+    .loginMenu h3 {
+      margin: 0;
+    }
+    .loginDiv {
+      margin: 0px 10px;
+    }
+      #magnifying-glass {
+        font-size: 2em;
+        display: inline-block;
+        margin-right: 5px;
+        width: 0.4em;
+        box-sizing: content-box;
+        height: 0.4em;
+        border: 0.1em solid var(--color-light);
+        position: relative;
+        border-radius: 0.35em;
+      }
+      #magnifying-glass:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        right: -0.25em;
+        bottom: -0.1em;
+        border-width: 0;
+        background: var(--color-light);
+        width: 0.35em;
+        height: 0.08em;
+        transform: rotate(45deg);
+      }
+      #magnifying-glass:hover {
+        border: 0.1em solid var(--color-green);
+      }
+      #magnifying-glass:hover:before {
+        background: var(--color-green);
+      }
+      #startNow {
+        border: 1.5px solid white;
+        border-radius: 30px;
+        padding: 4px 15px;
+      }
+        #startNow:hover {
+          color: var(--color-green);
+          border: 2px solid var(--color-green);
+          text-decoration: var(--color-dark) underline;
+        }
+
+  /* =====================
+  | | Modal
+  ===================== */
+
+  .modalBox {
+    display: none;
+  }
+
+  /* =====================
+  | | Main
+  ===================== */
+
+  main {
+    margin-top: 175px;
+    text-align: center;
+  }
+    main h2 {
+      font-size: 2em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .subMoto {
+      margin: 25px 0 45px 0;
+    }
+    main h3 {
+      font-size: .9em;
+      color: var(--color-green);
+      margin: 0;
+    }
+
+    .searchBar input {
+      width: 60%;
+      border-radius: 30px;
+      height: 30px;
+      border: none;
+    }
+
+    .sortMenu {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 30px 0;
+    }
+      .sortMenu li {
+        margin: 7px;
+      }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 96%;
+      margin: 0 auto;
+    }
+      .card {
+        width: 95%;
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        text-align: left;
+        margin: 7px 0;
+      }
+      .cardImg {
+        width: 100%;
+        height: 120px;
+        background-color: grey;
+      }
+        .cardImg img {
+          width: 100%;
+        }
+
+  /* =====================
+  | | Footer
+  ===================== */
+
+  footer {
+    background-color: var(--color-dark);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+  }
+
+  .footerCol {
+    display: flex;
+  }
+
+  .footerLinks {
+    text-align: left;
+  }
+
+  .footerLinks > ul {
+    padding: 15px;
+  }
+
+
+  /* Don't see this anywhere? */
+  .body {
+    background-color: #002;
+    text-align: center;
+  }
+
+  .menu ul a {
+    color: #E3D8A6;
+    display: block;
+    padding: 5px 10px;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .colHead {
+    margin: 15px;
+  }
+
+  .list-item {
+    list-style: none;
+  }
+
+  .list-item > a {
+    text-decoration: none;
+    color: gray;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+  }
+
+/* =====================
+| | Browser Design
+===================== */
+
+  @media screen and (min-width:350px) {
+
+    /* =====================
+    | | General
+    ===================== */
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    /* =====================
+    | | Main
+    ===================== */
+
+    .headContainer {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 96%;
+      margin: 0 auto;
+    }
+      .card {
+        width: 32%;
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        text-align: left;
+        margin: 7px 0;
+      }
+  }

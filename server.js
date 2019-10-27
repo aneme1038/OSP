@@ -17,7 +17,7 @@ const http = require('http').Server(app);
 //Socket.io
 const io = require('socket.io')(http);
 //method override
-const methodOverride = require('method-override');
+const methodOverride = require('method-override')
 //dotenv
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
@@ -57,15 +57,15 @@ app.use('/directory', pagesController);
 app.get('/', (req, res) => {
   res.render('index.ejs', {
     currentUser: req.session.currentUser
-  });
-});
+  })
+})
 //Main Server Route for user login session
 app.get('/app', (req, res) => {
   if(req.session.currentUser){
     res.render('app/index.ejs');
   } else {
     res.redirect('/sessions/new.ejs');
-  };
+  }
 });
 //--------------------
 //DATABASE CONNECTION
@@ -76,20 +76,20 @@ mongoose.connect(MONGODB_URI, {useNewUrlPaser: true});
 //Error / Success - Development Side
 db.on('error', (error) => {
   console.log(error.message + ' is MongoD not running?');
-});
+})
 db.on('connected', () => {
   console.log('Mongo Connected: ', /* insert Mongodb uri variable here */);
-});
+})
 db.on('disconnected', () => {
   console.log('Mongo Disconnected');
-});
+})
 //Connect to MongoDB locally
 mongoose.connection.once('open', () => {
   console.log('Connected to Mongoose');
-});
+})
 //--------------------
 //LISTENERS
 //--------------------
 app.listen(PORT, () => {
   console.log('Listening on ', PORT);
-});
+})
