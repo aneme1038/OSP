@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid gold;
-}
+} */
 
 /* =====================
 | | Color Variables
@@ -187,7 +187,7 @@
 
     .cards {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
       width: 96%;
       margin: 0 auto;
@@ -201,12 +201,27 @@
       }
       .cardImg {
         width: 100%;
-        height: 120px;
+        height: 130px;
         background-color: grey;
       }
         .cardImg img {
           width: 100%;
         }
+      .cardTitle h3 {
+        font-size: 1em;
+        color: black;
+        margin: 5px;
+      }
+        .cardTitle hr {
+          height: 3px;
+          margin-left: 15px;
+          width: 25%;
+          background-color: var(--color-green);
+        }
+      .cardDescription p {
+        font-size: .7em;
+        margin: 5px;
+      }
 
   /* =====================
   | | Footer
@@ -214,56 +229,34 @@
 
   footer {
     background-color: var(--color-dark);
-    bottom: 0;
     display: flex;
     justify-content: center;
     width: 100%;
-    left: 0;
+    margin-top: 70px;
   }
 
-  .footerCol {
-    display: flex;
+  .footerLinks h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    margin: 10px 20px 10px 0;
+    text-transform: capitalize;
   }
 
-  .footerLinks {
-    text-align: left;
+  .footerLinks li {
+    text-transform: capitalize;
   }
 
-  .footerLinks > ul {
-    padding: 15px;
+  .footerLinks a {
+    color: grey;
   }
 
-
-  /* Don't see this anywhere? */
-  .body {
-    background-color: #002;
-    text-align: center;
-  }
-
-  .menu ul a {
-    color: #E3D8A6;
-    display: block;
-    padding: 5px 10px;
-  }
-
-  .col {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 15px;
-  }
-
-  .colHead {
-    margin: 15px;
-  }
-
-  .list-item {
-    list-style: none;
-  }
-
-  .list-item > a {
+  .footerLinks a:hover {
     text-decoration: none;
-    color: gray;
+    color: var(--color-light);
+  }
+
+  .footerLinksCol {
+    padding: 10px;
   }
 
   .copyright {
@@ -277,6 +270,27 @@
 ===================== */
 
   @media screen and (min-width:350px) {
+
+    /* =====================
+    | | Main
+    ===================== */
+
+    .card {
+      width: 48%;
+    }
+
+    /* =====================
+    | | Footer
+    ===================== */
+
+    .footerLinks {
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+
+  @media screen and (min-width:650px) {
 
     /* =====================
     | | General
@@ -296,18 +310,16 @@
       margin: 0 auto;
     }
 
-    .cards {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      width: 96%;
+    .card {
+      width: 32%;
+    }
+
+    /* =====================
+    | | Footer
+    ===================== */
+
+    .footContainer {
+      width: 850px;
       margin: 0 auto;
     }
-      .card {
-        width: 32%;
-        background-color: var(--color-light);
-        color: var(--color-dark);
-        text-align: left;
-        margin: 7px 0;
-      }
   }
