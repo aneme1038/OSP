@@ -140,10 +140,13 @@
         }
 
   /* =====================
-  | | Modal
+  | | Modals
   ===================== */
 
   .modalBox {
+    display: none;
+  }
+  #loginModal, #registerModal {
     display: none;
   }
 
