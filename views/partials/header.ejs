@@ -16,9 +16,15 @@
     </div>
     <div class="loginDiv">
       <a href="/session/login"><h3>sign in</h3></a>
+        <div id="loginModal">
+          <% include ../sessions/new.ejs %>
+        </div>
     </div>
     <div class="loginDiv">
-      <a href="#"><h3 id="startNow">start now</h3></a>
+      <a href="/users/new"><h3 id="startNow">start now</h3></a>
+        <div id="registerModal">
+          <% include ../users/new.ejs %>
+        </div>
     </div>
   </div>
 </div>
