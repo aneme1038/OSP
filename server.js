@@ -92,24 +92,24 @@ mongoose.connection.once('open', () => {
 //HANDLERS
 //--------------------
   //handler to update modal styling
-const updateModal = (modal) => {
-  if(modal.style.display === "none") {
-    modal.style.display = "block";
-  } else {
-    modal.style.display = "none";
-  }
-}
+// const updateModal = (modal) => {
+//   if(modal.style.display === "none") {
+//     modal.style.display = "block";
+//   } else {
+//     modal.style.display = "none";
+//   }
+// }
 //--------------------
 //LISTENERS
 //--------------------
 app.listen(PORT, () => {
   console.log('Listening on ', PORT);
 });
-//Wait for DOM Load...
-document.addEventListener("DOMContentLoaded", function(){
-  //Modals
-  const loginModal = document.getElementById('loginModal');
-  const registerModal = document.getElementById('registerModal');
-  document.getElementById('loginClick').addEventListener("click", updateModal(loginModal));
-  document.getElementById('registerClick').addEventListener("click", updateModal(registerModal));
-}, false);
+// //Wait for DOM Load...
+// document.addEventListener("DOMContentLoaded", function(){
+//   //Modals
+//   const loginModal = document.getElementById('loginModal');
+//   const registerModal = document.getElementById('registerModal');
+//   document.getElementById('loginClick').addEventListener("click", updateModal(loginModal));
+//   document.getElementById('registerClick').addEventListener("click", updateModal(registerModal));
+// }, false);
