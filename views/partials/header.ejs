@@ -1,23 +1,30 @@
-<div class="titleBox">
-  <img src="../assets/logotitle.png" alt="Logo Title"/>
-</div>
-<div class="nav">
-  <ul class="menu1">
-    <li><a href="/directory/how-it-works">How It Works</a></li>
-    <li><a href="/directory/discover">Discover</a></li>
-    <li><a href="/directory/about">About</a></li>
-  </ul>
-</div>
-<div class="nav2">
-  <a href="#"><div id="magnifying-glass"></div></a>
-  <% if(currentUser) { %>
-  <form action="/sessions?_method=DELETE" method="POST">
-    <input type="submit" value="Sign Out"/>
-  </form>
-  <% } else { %>
-  <a href="/session/login" id="login"><h3>Sign In</h3></a>
-  <% } %>
-  <div id="rNavStart">
-    <div class="halfCircleLeft"></div><a href="/users/new" id="startNow"><h3>Start Now</h3></a><div class="halfCircleRight"></div>
+<div class="headContainer">
+  <div class="logo">
+    <!-- <img src="../assets/logotitle.png" alt="Logo Title"/> -->
+    <h1>TheBase</h1>
+  </div>
+  <div class="nav">
+    <ul class="navMenu">
+      <li><a href="/directory/how-it-works">how it works</a></li>
+      <li><a href="/directory/discover">discover</a></li>
+      <li><a href="/directory/about">about</a></li>
+    </ul>
+  </div>
+  <div class="loginMenu">
+    <div class="loginDiv">
+        <a href="#"><div id="magnifying-glass"></div></a>
+    </div>
+    <div class="loginDiv">
+      <a href="/sessions/login" id="loginClick"><h3>sign in</h3></a>
+        <div id="loginModal">
+          <% include ../sessions/new.ejs %>
+        </div>
+    </div>
+    <div class="loginDiv">
+      <a href="/users/new" id="registerClick"><h3 id="startNow">start now</h3></a>
+        <div id="registerModal">
+          <% include ../users/new.ejs %>
+        </div>
+    </div>
   </div>
 </div>
