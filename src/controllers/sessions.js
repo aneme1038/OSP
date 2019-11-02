@@ -20,29 +20,40 @@ sessions.delete('/', (req, res) => {
   });
 });
 
-//User Login
-sessions.post('/', (req, res) => {
+// //User Login
+// sessions.post('/', (req, res) => {
+//   User.findOne({username: req.body.username}, (error, foundUser) => {
+//     console.log(req.body);
+//     //series of checks for username and password
+//     if (error) {
+//       console.log(error);
+//       res.send('The Database encountered some error.')
+//     } else if (!foundUser) {
+//       //if the user found is considered "undefined" or "null"
+//       res.send('<a href="/">Sorry, no such user was found</a>')
+//     } else {
+//       if (bcrypt.compareSync(req.body.password, foundUser.password)){
+//         req.session.currentUser = foundUser;
+//         res.redirect('/');
+//       } else {
+//         res.status(401).json({
+//           status: 401,
+//           message: 'Login Failed'
+//         });
+//       }
+//     }
+//   });
+// });
+
+sessions.post("/", (req, res) => {
   User.findOne({username: req.body.username}, (error, foundUser) => {
-    console.log(req.body);
-    //series of checks for username and password
-    if (error) {
-      console.log(error);
-      res.send('The Database encountered some error.')
-    } else if (!foundUser) {
-      //if the user found is considered "undefined" or "null"
-      res.send('<a href="/">Sorry, no such user was found</a>')
+    if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+      console.log("I have successfully signed in.");
+      req.session.currentUser = foundUser;
+      res.redirect("/");
     } else {
-      if (bcrypt.compareSync(req.body.password, foundUser.password)){
-        console.log(foundUser);
-        req.session.currentUser = foundUser;
-        res.redirect('/');
-      } else {
-        res.status(401).json({
-          status: 401,
-          message: 'Login Failed'
-        });
-      }
-    }
+      res.send('<a href="/">Something has gone horribly wrong.</a>')
+    };
   });
 });
 

@@ -15,15 +15,41 @@
         <a href="#"><div id="magnifying-glass"></div></a>
     </div>
     <div class="loginDiv">
-      <a href="/session/login" id="loginClick"><h3>sign in</h3></a>
+      <a href="#" onclick="<% updateLoginModal() %>" id="loginClick"><h3>sign in</h3></a>
         <div id="loginModal">
-          <% include ../sessions/new.ejs %>
+          <div class="container" id="sessionsNewEJS">
+            <form action="/sessions" method="POST">
+              <fieldset class="fieldset">
+                <div>
+                  <h1 class="h1">Log In</h1>
+                  <label class="label" for="username">Username</label>
+                  <input class="input" type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div>
+                  <label class="password label" for="password">Password</label>
+                  <input class="input password" type="password" name="password" placeholder="Password" required>
+                </div>
+              </fieldset>
+              <input type="submit" class="btn" id="logInBtn" value="Log In">
+            </form>
+          </div>
         </div>
     </div>
     <div class="loginDiv">
-      <a href="/users/new" id="registerClick"><h3 id="startNow">start now</h3></a>
+      <a href="#" onclick="<% updateRegisterModal() %>" id="registerClick"><h3 id="startNow">start now</h3></a>
         <div id="registerModal">
-          <% include ../users/new.ejs %>
+          <div class="container" id="userNewEJS">
+            <h1 class="h1">Registration</h1>
+            <form action="/users" method="POST">
+              <fieldset class="fieldset">
+                <label class="label" for="username">Username</label>
+                <input class="input" type="text" name="username" required/>
+                <label class="password label" for="password">Password</label>
+                <input class="input password" type="password" name="password" required>
+              </fieldset>
+              <input class="btn submitBtn" type="submit" value="Register">
+            </form>
+          </div>
         </div>
     </div>
   </div>
