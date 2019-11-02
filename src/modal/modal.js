@@ -16,6 +16,7 @@ $(() => {
   // handler to update modal styling
   const updateLoginModal = () => {
     const $loginModal = $('#loginModal');
+    console.log($loginModal);
     if($loginModal.css('display') === "none") {
       $loginModal.css('display') = "block";
     } else {
@@ -24,6 +25,7 @@ $(() => {
   }
   const updateRegisterModal = () => {
     const $registerModal = $('#registerModal');
+    console.log($registerModal);
     if($registerModal.css('display') === "none") {
       $registerModal.css('display') = "block";
     } else {
