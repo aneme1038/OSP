@@ -10,6 +10,19 @@
       <li><a href="/directory/about">about</a></li>
     </ul>
   </div>
+  <% if (currentUser) { %>
+  <div class="userMenu">
+    <h3>Welcome, <%=currentUser.username%></h3>
+    <ul class="userMenu">
+      <li><a href="#">Your Projects</a></li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" value="Sign Out" />
+        </form>
+      </li>
+    </ul>
+  </div>
+  <% } else { %>
   <div class="loginMenu">
     <div class="loginDiv">
         <a href="#"><div id="magnifying-glass"></div></a>
@@ -67,4 +80,5 @@
       </div>
     </div>
   </div>
+  <% } %>
 </div>
