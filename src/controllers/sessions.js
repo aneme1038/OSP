@@ -24,7 +24,8 @@ sessions.post("/", (req, res) => {
 });
 
 //Close and Destroy User Session
-sessions.delete('/', (req, res) => {
+//**Seek Alternative means of destroying session as route is not currently working as is (check EJS File)
+sessions.delete("/", (req, res) => {
   req.session.destroy(() => {
     res.redirect('/');
     console.log('I have successfully signed out');
